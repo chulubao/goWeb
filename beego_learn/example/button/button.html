@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="txt/html; charset=utf-8" />
+    <title>登录</title>
+</head>
+<body>
+<form action="/btn" method="post">
+    <select id="group"  name="sel">
+        <option value="idv1">1AA</option>
+        <option value="idv2">2BB</option>
+        <option value="idv3">3CC</option>
+    </select>
+    <input type="submit" value="subaction"  name="id_clicked">
+
+
+    <hr>
+    <input type="file" id="file"></input>
+    <!-- document.getElementById('file').value -->
+    <input type="button" value="上传" onclick="alert(document.getElementById('file').value);"></input>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{{ define "index" }}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>layout</title>
+</head>
+<body>
+{{/*
+在模板中使用{{ . | fdate }}，当然也可以不适用管道过滤器;
+而是使用正常的函数调用形式，{{ fdate . }}
+*/}}
+<div style="background: yellow">
+{{showTime  .}}
+<hr>
+{{. | showTime }}
+</div>
+<hr>
+{{sum 3 4}}
+<hr>
+{{sub 10 2}}
+<hr>
+{{$v1 :=20 }}  {{$v2 :=30 }}
+{{mult $v1  $v2}}
+</body>
+</html>
+{{ end }}

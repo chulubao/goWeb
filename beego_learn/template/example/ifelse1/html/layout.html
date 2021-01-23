@@ -1,0 +1,47 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>layout</title>
+</head>
+<body>
+<h3>This is layout</h3>
+template data: {{ . }}
+<hr>
+{{- /*
+eq arg1 arg2：
+    arg1 == arg2时为true
+ne arg1 arg2：
+    arg1 != arg2时为true
+lt arg1 arg2：
+    arg1 < arg2时为true
+le arg1 arg2：
+    arg1 <= arg2时为true
+gt arg1 arg2：
+    arg1 > arg2时为true
+ge arg1 arg2：
+    arg1 >= arg2时为true
+*/}}
+
+{{- /*
+template引擎在进行替换的时候，是完全按照文本格式进行替换的。除了需要评估和替换的地方，所有的行分隔符、空格等等空白都原样保留。
+所以，对于要解析的内容，不要随意缩进、随意换行。
+可以在{{符号的后面加上短横线并保留一个或多个空格"- "来去除它前面的空白(包括换行符,制表符,空格等)，即{{- xxxx。
+在}}的前面加上一个或多个空格以及一个短横线"-"来去除它后面的空白，即xxxx -}}。
+ */}}
+
+<hr>
+{{ range $key, $value := . }}
+<li>key: {{ $key }}, value: {{ $value }}</li>
+{{- if (gt $key 3)}}
+    <div style="background: yellow">
+    {{$value }}
+    </div>
+{{- end}}
+
+{{ end }}
+
+</body>
+</html>
+{{ end }}

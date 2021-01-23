@@ -1,0 +1,22 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小韩说课</title>
+</head>
+<body>
+
+Hello, {{ .User }}
+<br>
+
+你熟悉的技术：
+<ul>
+{{ range .List }}
+    <li>{{.}}</li>
+{{end}}
+</ul>
+
+</body>
+</html>
+{{ end }}

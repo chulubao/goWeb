@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{$variable := "hello"}}
+
+{{$variable}}
+<br>----------------------------------------------------------------------------<br>
+{{$stuVar := .}}
+
+{{$stuVar.MsgTitle}}  {{$stuVar.MsgContent}}  {{$stuVar.MsgTimes}}
+<br>----------------------------------------------------------------------------<br>
+{{$msgTitle := $stuVar.MsgTitle}}
+
+{{$msgTitle }}
+</body>
+</html>

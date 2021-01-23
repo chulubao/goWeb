@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="../static/js/jquery-3.4.1.js"></script>
+</head>
+<body>
+<form>
+    <!-- 表单选择器  -->
+    标题:{{.stuMsg.Title}}
+    <br><hr>
+    <input type="text" width="150px">
+    <br><hr>
+    {{.stuMsg.Content}}<input type="checkbox">
+</form>
+<script type="text/javascript">
+    $(
+        function () {
+            $(":input").val("welcome!");
+            $(":input").attr("checked", "checked");
+        }
+    );
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>layout</title>
+</head>
+<body>
+<h3>This is layout</h3>
+template data: {{ . }}
+
+<!--
+对于go模板，with语句其含义就是创建一个封闭的作用域;
+在其范围内，可以使用.action，而与外面的.无关，只与with的参数有关。
+-->
+<hr>
+{{ with "world"}}
+Now the dot is set to {{ . }}
+{{ end }}
+
+<hr>
+
+<!--
+with语句也可以有else。
+else中的.则和with外面的.一样，毕竟只有with语句内才有封闭的上下文。
+-->
+{{ with ""}}
+Now the dot is set to {{ . }}
+{{ else }}
+ {{ . }}
+{{ end }}
+
+</body>
+</html>
+{{ end }}

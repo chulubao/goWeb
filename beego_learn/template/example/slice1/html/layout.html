@@ -1,0 +1,21 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>layout</title>
+</head>
+<body>
+<h3>This is layout</h3>
+template data: {{ . }}
+<hr>
+第一个值是当前迭代到的索引位置，第二个值是该位置对应元素值的一份副本。
+<hr>
+{{ range $key, $value := . }}
+<li>key: {{ $key }}, value: {{ $value }}</li>
+{{ else }}
+empty
+{{ end }}
+</body>
+</html>
+{{ end }}

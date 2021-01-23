@@ -1,0 +1,35 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>layout</title>
+</head>
+<body>
+<h3>This is layout</h3>
+template data: {{ . }}
+<hr>
+
+{{ range . }}
+<li>{{ . }}</li>
+{{ end }}
+
+<hr>
+
+{{ range $key, $value := . }}
+<li>key: {{ $key }}, value: {{ $value }}</li>
+{{ end }}
+
+<hr>
+
+<!-- 传入对象参数赋值给变量  -->
+{{ $slice := . }}
+
+{{ range $kv, $val :=  $slice }}
+<li>kv: {{ $kv }}, val: {{ $val }}</li>
+{{ end }}
+<hr>
+{{template  "index" .}}
+</body>
+</html>
+{{ end }}

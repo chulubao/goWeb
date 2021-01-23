@@ -1,0 +1,25 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>layout</title>
+</head>
+<body>
+<h3>This is layout</h3>
+layout template data: ({{ . }})
+
+<hr>
+<!--  layout中引用了content模板 -->
+{{ template "content" }}
+
+<hr>
+<!--
+引用除了模板index，还包括参数的传递。
+{{ template "index" . }}把参数传给子模板，再次访问，就能看见index.html模板也有数据。
+-->
+{{ template "index"  .}}
+
+</body>
+</html>
+{{ end }}

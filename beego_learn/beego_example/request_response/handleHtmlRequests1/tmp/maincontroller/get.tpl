@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<form action="/login" method="post">
+
+    <!--  style="margin-top:10px;margin-left:4px;margin-right:4px;margin-bottom:4px;" -->
+    <table align="center" border="0" cellspacing="10" cellpadding="10" style="margin-top:70px;">
+
+        <tr style="vertical-align:middle; horiz-align: left">
+            <td align="center" valign="middle">用户名:</td>
+            <td><input type="text" name="username"></td>
+        </tr>
+        <tr style="vertical-align: middle; horiz-align: left">
+            <td align="center" valign="middle">密码:</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr style="vertical-align: middle; horiz-align: left">
+            <th colspan="2"><input type="submit" value="登陆"></th>
+        </tr>
+
+    </table>
+
+</form>
+</body>
+</html>
+
+
